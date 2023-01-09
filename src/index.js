@@ -1,15 +1,23 @@
 const express = require("express");
 const { getUser, createUser } = require("./controller/index");
-const url = require('url');
+const cors = require("cors");
 
 const PORT = process.env.PORT || 3001;
+
+const corsOptions = {
+  origin: '*',
+  credentials: true,
+  optionSuccessStatus: 200,
+}
+
+app.use(cors(corsOptions))
 
 const app = express();
 
 app.use(express.json())
 
 app.get("/user/:id", (req, res) => {
-  const id = req.params.id;  
+  const id = req.params.id;
   getUser(id, res).catch(console.dir);
 });
 
