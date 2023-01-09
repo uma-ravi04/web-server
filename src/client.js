@@ -1,7 +1,7 @@
 const MongoClient = require('mongodb').MongoClient;
 
 // Connection URL
-const url = process.env.MONGO_DB_URL || 'mongodb+srv://uma_local:root@cluster0.0v7xi.mongodb.net/test';
+const url = process.env.MONGO_DB_URL;
 let database;
 // Database Name
 const collectionName = 'user';
