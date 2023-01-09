@@ -4,17 +4,17 @@ const cors = require("cors");
 
 const PORT = process.env.PORT || 3001;
 
+const app = express();
+
 const corsOptions = {
   origin: '*',
   credentials: true,
   optionSuccessStatus: 200,
-}
+};
 
-app.use(cors(corsOptions))
+app.use(cors(corsOptions));
 
-const app = express();
-
-app.use(express.json())
+app.use(express.json());
 
 app.get("/user/:id", (req, res) => {
   const id = req.params.id;
